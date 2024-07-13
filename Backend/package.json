@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "antd": "^5.18.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "debug": "^4.3.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-mongodb-crud-template": "^3.5.0",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.3.2",
+    "nodemon": "^3.1.0"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "build": "npm i "
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "fahim",
+  "license": "ISC",
+  "description": "",
+  "engines": {
+    "node": "20.12.2"
+  }
+}

@@ -14,6 +14,7 @@
     "@stripe/stripe-js": "^3.4.1",
     "antd": "^5.18.0",
     "aos": "^2.3.4",
+    "axios": "^1.7.2",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.8.0",
     "react": "^18.2.0",
@@ -23,6 +24,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.22.3",
     "react-toastify": "^10.0.5",
+    "sslcommerz-nodejs": "^1.0.8",
     "swiper": "^11.1.1"
   },
   "devDependencies": {

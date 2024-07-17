@@ -10,6 +10,8 @@ import DoctorCatagory from "../client/doctorCatagory/DoctorCatagory";
 import DoctorProfile from "../client/doctors/DoctorProfile";
 import Doctors from "../client/doctors/Doctors";
 import Payment from "../client/payment/Payment";
+import PaymentFail from "../client/payment/component/PaymentFail";
+import PaymentSuccess from "../client/payment/component/PaymentSuccess";
 import Services from "../client/services/Services";
 import Home from "../home/Home";
 import Contact from "../home/component/contact/Contact";
@@ -79,5 +81,13 @@ export const router = [
   {
     path: "/payment",
     element: <Payment />,
+  },
+  {
+    path: "/payment/success/:tranId",
+    element: <PaymentSuccess/>,
+  },
+  {
+    path: "/payment/fail/:tranId",
+    element: <PaymentFail/>,
   },
 ];

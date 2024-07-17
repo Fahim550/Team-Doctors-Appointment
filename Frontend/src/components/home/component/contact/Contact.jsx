@@ -22,7 +22,7 @@ export default function Contact() {
           className="p-4 h-52 md:h-64 sm:w-4/12 bg-sky-600 "
           data-aos="fade-right"
         />
-        <form novalidate="" className="sm:space-y-2 w-8/12" data-aos="fade-left">
+        <form noValidate="" className="sm:space-y-2 w-8/12" data-aos="fade-left">
           <div className="flex flex-wrap gap-4 sm:gap-12">
             <div className="flex flex-col">
               <label for="name" className="text-md text-gray-700">

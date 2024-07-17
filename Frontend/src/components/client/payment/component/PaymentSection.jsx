@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import StripePayment from "./StripePayment";
+import PaymentForm from "./PaymentForm";
 
 export default function PaymentSection() {
   // const [appoinment, setAppoinment] = useContext(StateContext);
@@ -107,10 +107,7 @@ export default function PaymentSection() {
         </div>
       </div>
       <div className="mt-8 col-span-3 sm:col-span-3 ">
-        <StripePayment
-          money={appoinment.consultationFee}
-          userInfo={sessionStorage.getItem("email")}
-        />
+        <PaymentForm appoinment={appoinment}/>
       </div>
     </div>
   );

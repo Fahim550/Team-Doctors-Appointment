@@ -1,14 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import Layout from "../layout/Layout";
+import React, { useContext, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { StateContext } from "../../../App";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Layout from "../layout/Layout";
 
 export default function DoctorProfile() {
   const [stateData, setStateData] = useContext(StateContext);
   const navigate = useNavigate();
-  const login = sessionStorage.getItem("email")||sessionStorage.getItem('Adminemail');
+  const login =
+    sessionStorage.getItem("email") || sessionStorage.getItem("Adminemail");
   const notify = () =>
     toast.error("To make a doctor's appointment, you need to login first!");
   useEffect(() => {
@@ -16,22 +17,27 @@ export default function DoctorProfile() {
     if (!stateData.name) {
       navigate("/doctors");
     }
-    console.log("statedata",stateData);
-  },[]);
- 
+    console.log("statedata", stateData);
+  }, []);
+
   return (
     <div>
       <Layout>
-        <div className=" w-6/12 sm:w-10/12 justify-center p-2 mx-auto ">
-              <h1 className="text-2xl font-extrabold">Details</h1>
-          <div className=" my-2 border-2 dark:bg-gray-900 dark:text-gray-100 hover:drop-shadow-xl">
+        <div className="mt-6 w-6/12 sm:w-10/12 justify-center p-2 mx-auto ">
+          {/* <h1 className="text-2xl font-bold">Details</h1> */}
+          <div className=" my-2 border-2 bg-gray-100 dark:bg-gray-900 dark:text-gray-100 hover:drop-shadow-lg">
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-12 gap-4 mb-2 ">
               <div className="grid grid-cols-12 col-span-8 p-4 space-y-4 md:space-y-0 md:space-x-6 ">
-                <img
-                  src={stateData.image}
-                  alt=""
-                  className="col-span-3 self-center flex-shrink-0 w-36 h-28 border rounded-lg md:justify-self-start dark:bg-gray-500 dark:border-gray-700"
-                />
+                <div className="col-span-3 relative">
+                  <img
+                    src={stateData.image}
+                    alt=""
+                    className="relative self-center flex-shrink-0  border rounded-lg md:justify-self-start dark:bg-gray-500 dark:border-gray-700"
+                  />
+                  <span className="absolute -mt-3 ml-8  bg-blue-600 border-2 text-white font-medium px-2 rounded-2xl">
+                    Appoinment
+                  </span>
+                </div>
                 <div className="flex flex-col col-span-8 ">
                   <h2 className="text-xl font-bold text-center tracking-wider md:text-left">
                     {stateData.name}
@@ -42,7 +48,7 @@ export default function DoctorProfile() {
                 </div>
               </div>
               <div className="col-span-3 p-4">
-                <h4>pre consultation</h4>
+                <h4 className="text-lg font-semibold">Consultation Fee</h4>
                 <h3 className="flex text-4xl mb-4 font-bold text-blue-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -70,20 +76,26 @@ export default function DoctorProfile() {
                   {stateData.consultationFee}
                   <p className="mt-4 text-sm text-gray-800">(incl,Vat)</p>
                 </h3>
-                {login?
-                
-                <Link
-                to={"/appoinment/"+stateData.name}
-                  type="button"
-                  className="px-4 py-2 font-medium rounded-full text-white bg-blue-500 dark:bg-gray-800 dark:text-gray-100"
-                >
-                  Appoinment
-                </Link>
-                :<div>
-                <Link onClick={notify} className="px-4 py-2 font-medium rounded-full text-white bg-blue-500 dark:bg-gray-800 dark:text-gray-100">Appoinment</Link>
-                <ToastContainer position="top-right"/>
-              </div>
-              }
+                {login ? (
+                  <Link
+                    to={"/appoinment/" + stateData.name}
+                    type="button"
+                    className="pi pi-calendar px-4 py-2 font-medium rounded-full text-white bg-blue-500 dark:bg-gray-800 dark:text-gray-100"
+                    
+                  >
+                    Book Online Appoinment
+                  </Link>
+                ) : (
+                  <div>
+                    <Link
+                      onClick={notify}
+                      className="pi pi-calendar-clock px-4 py-2 font-medium rounded-full text-white bg-blue-500 dark:bg-gray-800 dark:text-gray-100"
+                    >
+                      Book Online Appoinment
+                    </Link>
+                    <ToastContainer position="top-right" />
+                  </div>
+                )}
               </div>
             </div>
             <div className="grid grid-cols-3 m-2 w-10/12 ">
@@ -107,9 +119,9 @@ export default function DoctorProfile() {
               </div>
             </div>
           </div>
-          <div>
+          <div className="mt-6">
             <h1 className="text-xl font-bold">
-              About Doctor Dr {stateData.name}-{stateData.graduation}
+              About Doctor  {stateData.name}-{stateData.graduation}
             </h1>
             <p className="leading-6">
               Dr. {stateData.name} warm demeanor and excellent communication

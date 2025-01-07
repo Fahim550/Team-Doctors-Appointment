@@ -1,17 +1,33 @@
-import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import { useState } from "react";
+import { CiMenuFries } from "react-icons/ci";
+import { FiUser } from "react-icons/fi";
+import { IoIosArrowUp, IoIosSearch } from "react-icons/io";
+import { IoSettingsOutline } from "react-icons/io5";
+import { TbLogout2 } from "react-icons/tb";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../../assets/logo.png";
 export default function Navbars() {
+  // const router = useRouter();
+  const navigate = useNavigate();
+
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false);
+  const userLogin = () => {
+    return sessionStorage.getItem("email");
+  };
+  const adminLogin = () => {
+    return sessionStorage.getItem("Adminemail");
+  };
+  const email = userLogin();
+  const adminEmail = adminLogin();
   const userLogOut = () => {
     sessionStorage.removeItem("email");
     sessionStorage.removeItem("Adminemail");
     window.location.reload();
-    
   };
   return (
-    <div className="fixed z-50 drop-shadow-xl">
-      <nav className="hidden sm:block bg-blue-900 dark:bg-gray-700 ">
-        <div className="w-screen-xl px-4 py-3 mx-auto">
+    <div className="fixed z-50 drop-shadow-xl w-full">
+      <nav className="  bg-blue-900 dark:bg-gray-700 ">
+        <div className="hidden sm:block w-screen-xl px-4 py-3 mx-auto">
           <div className=" items-center">
             <ul className="flex  justify-between font- mt-0   text-sm ">
               <div className=" flex  space-x-8">
@@ -141,69 +157,193 @@ export default function Navbars() {
             </ul>
           </div>
         </div>
-      </nav>
-
-      <Navbar fluid rounded className="w-screen">
-        <Navbar.Brand >
-          <Link to={'/'} className="flex">
-          <img
-            src={logo}
-            className="h-12 sm:h-12"
-            alt=" Logo"
-          />
-          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          ZocDoc
-          </span>
-          </Link>
-          
-        </Navbar.Brand>
-        <div className="flex  md:order-2 mr-6 space-x-4">
-          {sessionStorage.getItem("email") || sessionStorage.getItem("Adminemail")?(
-            <Dropdown
-            className=""
-            arrowIcon={false}
-            inline
-            label={
-              <Avatar
-                alt="User settings"
-                img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                rounded
-              />
-            }
-          >
-            <Dropdown.Header>
-              <span className="block text-sm">user</span>
-              {/* <Link to="/admin/login" className="block text-sm">admin login</Link> */}
-              
-            </Dropdown.Header>
-            
-            <Dropdown.Divider />
-            <Dropdown.Item onClick={() => userLogOut()}>Sign out</Dropdown.Item>
-          </Dropdown>
-            // <button >Logout</button>
-            // <Link to="/signup">SignUp</Link>
-          ):(
-            <Link to="/login" className="bg-blue-700 text-white font-semibold rounded-lg p-1.5 hover:bg-blue-500">Login</Link>
-          )}
-          
-          <Navbar.Toggle className="md:hidden "/>
-        </div>
-        <div className="flex space-x-8">
-          <Navbar.Collapse>
-            <Link to="/" active>
+        <div className="flex items-center justify-between w-full relative bg-white boxShadow  px-[10px] py-[8px]">
+          <div className="flex gap-2 items-center">
+            <img
+              src="https://i.ibb.co.com/3NZqVrV/logo.png"
+              alt="logo"
+              className="w-[55px] "
+            />
+            <span className="text-xl font-bold bg-gradient-to-r from-cyan-500 to-blue-700 bg-clip-text text-transparent">
+              BD Doctors
+            </span>
+          </div>
+          <ul className="items-center gap-[20px] text-[1.2rem] font-semibold text-[#424242] lg:flex hidden">
+            <Link
+              to="/"
+              className="before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize"
+            >
               Home
             </Link>
-            <Link to=''>About</Link>
-            <Link to="/services">Services</Link>
-            <Link to="/doctors">Doctors</Link>
-            <Link href="#">Contact</Link>
-            {sessionStorage.getItem("Adminemail")?(
-            <Link to='/dashboard'>Dashboard</Link>
+            <Link className="before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize">
+              About
+            </Link>
+            <Link
+              to="/services"
+              className="before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize"
+            >
+              Service
+            </Link>
+            <Link
+              to="/doctors"
+              className="before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize"
+            >
+              Doctors
+            </Link>
+            {!adminEmail ? (
+              <Link
+                to=""
+                className="before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize"
+              >
+                Contact
+              </Link>
+            ) : (
+              ""
+            )}
+            {adminEmail ? (
+              <Link
+                to="/dashboard"
+                className="before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize"
+              >
+                Dashboard
+              </Link>
+            ) : (
+              ""
+            )}
+          </ul>
+          {adminEmail || email ? (
+            <div className="flex">
+              <div
+                className="flex items-center gap-[10px] cursor-pointer relative"
+                onClick={() => setAccountMenuOpen(!accountMenuOpen)}
+              >
+                <div className="relative">
+                  <img
+                    src="https://i.ibb.co.com/QHkZhKc/Whats-App-Image-2025-01-08-at-00-52-20-079ce90a.jpg"
+                    alt="avatar"
+                    className="w-[35px] h-[35px] rounded-full object-cover"
+                  />
+                  <div className="w-[10px] h-[10px] rounded-full bg-green-500 absolute bottom-[0px] right-0 border-2 border-white"></div>
+                </div>
 
-            ):""}
-          </Navbar.Collapse>
+                <h1 className="text-[1rem] font-[400] text-gray-600 sm:block hidden">
+                  Fahim
+                </h1>
+
+                <div
+                  className={`${
+                    accountMenuOpen
+                      ? "translate-y-0 opacity-100 z-[1]"
+                      : "translate-y-[10px] opacity-0 z-[-1]"
+                  } bg-white w-max rounded-md boxShadow absolute top-[45px] right-0 p-[10px] flex flex-col transition-all duration-300 gap-[5px]`}
+                >
+                  <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50">
+                    <FiUser />
+                    View Profile
+                  </p>
+                  <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50">
+                    <IoSettingsOutline />
+                    Settings
+                  </p>
+                  <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50">
+                    <FiUser />
+                    View Profile
+                  </p>
+
+                  <div
+                    className="mt-3 border-t border-gray-200 pt-[5px]"
+                    onClick={() => userLogOut()}
+                  >
+                    <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-red-500 hover:bg-red-50">
+                      <TbLogout2 />
+                      Logout
+                    </p>
+                  </div>
+                </div>
+
+                <IoIosArrowUp
+                  className={`${
+                    accountMenuOpen ? "rotate-0" : "rotate-[180deg]"
+                  } transition-all duration-300 text-gray-600 sm:block hidden`}
+                />
+              </div>
+
+              <CiMenuFries
+                onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
+                className="text-[1.8rem] text-[#424242]c cursor-pointer lg:hidden flex"
+              />
+            </div>
+          ) : (
+            <div className="items-center gap-[10px] flex">
+              <Link
+                to="/login"
+                className="py-[7px] text-[1rem] px-[16px] rounded-full capitalize hover:text-[#3B9DF8] transition-all duration-300 sm:flex hidden"
+              >
+                Sign in
+              </Link>
+              <Link
+                to="/signup"
+                className="py-[7px] text-[1rem] px-[16px] rounded-full capitalize bg-[#3B9DF8] text-white hover:bg-blue-400 transition-all duration-300 sm:flex hidden"
+              >
+                Sign up
+              </Link>
+
+              <CiMenuFries
+                className="text-[1.8rem] mr-1 text-[#424242]c cursor-pointer lg:hidden flex"
+                onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
+              />
+            </div>
+          )}
+
+          <aside
+            className={` ${
+              mobileSidebarOpen
+                ? "translate-x-0 opacity-100 z-20"
+                : "translate-x-[200px] opacity-0 z-[-1]"
+            } lg:hidden bg-white boxShadow p-4 text-center absolute top-[65px] right-0 w-full rounded-md transition-all duration-300`}
+          >
+            <div className="relative mb-5">
+              <input
+                className="py-1.5 pr-4 w-full pl-10 rounded-full border border-gray-200 outline-none focus:border-[#3B9DF8]"
+                placeholder="Search..."
+              />
+              <IoIosSearch className="absolute top-[8px] left-3 text-gray-500 text-[1.3rem]" />
+            </div>
+            <ul className="items-center gap-[20px] text-[1.2rem] font-semibold text-gray-600 flex flex-col">
+              <Link
+                to="/"
+                className="hover:border-b-[#3B9DF8] border-b-[2px] border-transparent transition-all duration-500 cursor-pointer capitalize"
+              >
+                Home
+              </Link>
+              <Link
+                to=""
+                className="hover:border-b-[#3B9DF8] border-b-[2px] border-transparent transition-all duration-500 cursor-poin ter capitalize"
+              >
+                About
+              </Link>
+              <Link
+                to="/services"
+                className="hover:border-b-[#3B9DF8] border-b-[2px] border-transparent transition-all duration-500 cursor-pointer capitalize"
+              >
+                Service
+              </Link>
+              <Link
+                to="/doctors"
+                className="hover:border-b-[#3B9DF8] border-b-[2px] border-transparent transition-all duration-500 cursor-pointer capitalize"
+              >
+                Doctors
+              </Link>
+              <Link
+                to=""
+                className="hover:border-b-[#3B9DF8] border-b-[2px] border-transparent transition-all duration-500 cursor-pointer capitalize"
+              >
+                Contact
+              </Link>
+            </ul>
+          </aside>
         </div>
-      </Navbar>
+      </nav>
     </div>
   );
 }

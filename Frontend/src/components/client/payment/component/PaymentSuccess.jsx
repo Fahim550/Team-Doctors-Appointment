@@ -7,9 +7,10 @@ export default function PaymentSuccess() {
   return (
     <div>
       <Layout>
-        <div className="text-lime-500 min-h-full text-2xl mt-6  flex justify-center  ">
+        <div className="text-lime-500 min-h-full text-2xl mt-6  flex justify-center ">
         Payment Successfull {tranid}
             </div></Layout>
+            
     </div>
   );
 }

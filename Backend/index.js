@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const SSLCommerzPayment = require("sslcommerz-lts");
 const dotenv = require("dotenv");
+const http = require("http");
+const { Server } = require("socket.io");
 dotenv.config();
 // Your mongodb uri
 // Step 1 :
@@ -26,6 +28,30 @@ const port = 8080 || 8088 || 3000 || 3030 || 5173;
 // create application/json parser
 const jsonParser = bodyParser.json();
 
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
+
+io.on('connection', (socket) => {
+  console.log('New client connected', socket.id);
+
+  socket.on('join-room', (roomId) => {
+    socket.join(roomId);
+    socket.to(roomId).emit('user-connected', socket.id);
+
+    socket.on('signal', (data) => {
+      io.to(data.to).emit('signal', data);
+    });
+
+    socket.on('disconnect', () => {
+      socket.to(roomId).emit('user-disconnected', socket.id);
+    });
+  });
+});
 async function run() {
   try {
     // Create references to the database and collection in order to run

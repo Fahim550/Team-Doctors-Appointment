@@ -48,7 +48,7 @@ export default function SignUp() {
           className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
         >
           <img className="h-12 mr-2" src={logo} alt="logo" />
-          ZocDoc
+          CareHive
         </a>
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -188,6 +188,37 @@ export default function SignUp() {
           </div>
         </div>
       </div>
+
+
+      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
+	<div className="mb-8 text-center">
+		<h1 className="my-3 text-4xl font-bold">Registration</h1>
+	</div>
+	<form noValidate="" action="" className="space-y-12">
+		<div className="space-y-4">
+			<div>
+				<label htmlFor="email" className="block mb-2 text-sm">Email address</label>
+				<input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+			</div>
+			<div>
+				<div className="flex justify-between mb-2">
+					<label htmlFor="password" className="text-sm">Password</label>
+					<a rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-600">Forgot password?</a>
+				</div>
+				<input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+			</div>
+		</div>
+		<div className="space-y-2">
+			<div>
+				<button type="button" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Sign in</button>
+			</div>
+			<p className="px-6 text-sm text-center dark:text-gray-600">Don't have an account yet?
+				<a rel="noopener noreferrer" href="#" className="hover:underline dark:text-violet-600">Sign up</a>.
+			</p>
+		</div>
+	</form>
+</div>
+
     </section>
   );
 }

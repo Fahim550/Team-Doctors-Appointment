@@ -16,7 +16,7 @@ export default function HeroSection() {
           <img
             src={carousel1}
             className="h-5/6 sm:h-full
-          w-full opacity-50"
+          w-full opacity-50 bg-cover" 
             alt=""
             data-aos="zoom-in"
             data-aos-duration="3000"
@@ -39,7 +39,7 @@ export default function HeroSection() {
           <img
             src={carousel2}
             className="h-5/6 sm:h-full
-            w-full "
+            w-full bg-cover"
             alt=""
           />
           <div

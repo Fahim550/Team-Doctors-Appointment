@@ -13,6 +13,7 @@ import Payment from "../client/payment/Payment";
 import PaymentFail from "../client/payment/component/PaymentFail";
 import PaymentSuccess from "../client/payment/component/PaymentSuccess";
 import Services from "../client/services/Services";
+import BlogDetails from "../client/blog/BlogDetails";
 import Home from "../home/Home";
 import Contact from "../home/component/contact/Contact";
 
@@ -36,6 +37,10 @@ export const router = [
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/blogDetails",
+    element: <BlogDetails/>,
   },
   {
     path: "/login",

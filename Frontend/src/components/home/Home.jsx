@@ -1,26 +1,25 @@
-import React from 'react'
-import HeroSection from './component/hero-section/HeroSection'
-import Navbars from '../shared/navbar/Navbars'
-import Services from './component/services/Services'
-import Testimonial from './component/testimonial/Testimonial'
-import DoctorsTeam from './component/team/DoctorsTeam'
-import Contact from './component/contact/Contact'
-import Footer from '../shared/footer/Footer'
-import Layout from '../client/layout/Layout'
+import React from "react";
+import Blog from "../client/blog/Blog";
+import Layout from "../client/layout/Layout";
+import Contact from "./component/contact/Contact";
+import HeroSection from "./component/hero-section/HeroSection";
+import Speciality from "./component/speciality/Speciality.jsx";
+import DoctorsTeam from "./component/team/DoctorsTeam";
+import Testimonial from "./component/testimonial/Testimonial";
 
 export default function Home() {
-  
   return (
     <div>
-        {/* <Navbars/> */}
-        <Layout>
-        <HeroSection/>
-        <Services/>
-        <Testimonial/>
-        <DoctorsTeam/>
-        <Contact/>
-        </Layout>
-        {/* <Footer/> */}
+      {/* <Navbars/> */}
+      <Layout>
+        <HeroSection />
+        <Speciality />
+        <DoctorsTeam />
+        <Blog />
+        <Testimonial />
+        <Contact />
+      </Layout>
+      {/* <Footer/> */}
     </div>
-  )
+  );
 }

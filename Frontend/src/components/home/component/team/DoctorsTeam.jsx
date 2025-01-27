@@ -111,9 +111,9 @@ export default function DoctorsTeam() {
     setStateData(doctor);
   };
   return (
-    <section className="bg-white dark:bg-gray-900">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
-        <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+    <section className="bg-gray-100 dark:bg-gray-900 my-4">
+      <div className="py-8 px-4 lg:py-16 lg:px-6  w-10/12 mx-auto">
+        <div className="mx-auto  text-center mb-8 lg:mb-16">
           <h2
             className="mb-4 text-4xl tracking-tight font-extrabold text-blue-800 dark:text-white"
             data-aos="zoom-out"
@@ -127,50 +127,77 @@ export default function DoctorsTeam() {
           </p> */}
         </div>
 
-        <Swiper
-          slidesPerView={1}
-          sm:slidesPerView={3}
-          spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
-          {doctors && doctors.length > 0 ? (
-            // console.log("doctor",doctors),
-            <div>
-              {doctors.map((doctor, i) => (
-                <SwiperSlide
-                  key={i}
-                  className="max-w-xs p-6 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50"
-                >
-                  <Link to="/doctors">
-                    <img
-                      src={doctor?.image}
-                      alt=""
-                      className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
-                    />
-                    <div className="mt-6 mb-2">
-                      <span className="block text-xs font-medium tracki uppercase dark:text-violet-400">
-                        {doctor?.name}
-                      </span>
-                      <h2 className="text-xl font-semibold tracki">
-                        {doctor?.specilities}
-                      </h2>
-                    </div>
-                    <p className="dark:text-gray-100">
-                      {doctor?.name} et lorem at elit tristique dignissim et
-                      ullamcorper elit. In sed feugiat mi. Etiam ut lacinia dui.
-                    </p>
-                  </Link>
-                </SwiperSlide>
-              ))}
-            </div>
-          ) : (
-            ""
-          )}
-        </Swiper>
+        {doctors && doctors.length > 0 ? (
+          // console.log("doctor",doctors),
+          <Swiper
+            slidesPerView={1}
+            // sm:slidesPerView={1}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            breakpoints={{
+              // Small screens (mobile)
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              // Medium screens (tablet)
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 25,
+              },
+              // Large screens (desktop)
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              1440: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+              1850: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+              },
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {doctors.map((doctor, i) => (
+              <SwiperSlide
+                key={i}
+                className=" p-6 rounded-md shadow-md bg-white dark:bg-gray-900 dark:text-gray-50"
+              >
+                <Link to="/doctors" className="min-h-[350px]">
+                  <img
+                    src={doctor?.image}
+                    alt=""
+                    className="w-full rounded-md object-cover  object-center
+      h-72 md:h-72 lg:h-80 xl:h-[350px] 
+      dark:bg-gray-500"
+                  />
+                  <div className="mt-6 mb-2">
+                    <span className="block text-xs font-medium uppercase tracking-wide dark:text-violet-400">
+                      {doctor?.name}
+                    </span>
+                    <h2 className="text-xl font-semibold">
+                      {doctor?.specilities}
+                    </h2>
+                  </div>
+                  <p className="dark:text-gray-100">
+                    {doctor?.name} et lorem at elit tristique dignissim et
+                    ullamcorper elit. In sed feugiat mi. Etiam ut lacinia dui.
+                  </p>
+                </Link>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div class="min-h-[350px] mt-5 mx-auto relative w-12 rounded-full">
+            <div class=" w-12 aspect-square  rounded-full border-8 border-blue-300 border-r-orange-400 animate-l2"></div>
+          </div>
+        )}
       </div>
     </section>
   );

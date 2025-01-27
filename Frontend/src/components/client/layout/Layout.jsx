@@ -6,7 +6,7 @@ export default function Layout({children}) {
   return (
     <div>
         <Navbars/>
-            <div className='sm:py-28  box-border'>
+            <div className='sm:py-28  box-border font-serif'>
                 {children}
             </div>
         <Footer/>

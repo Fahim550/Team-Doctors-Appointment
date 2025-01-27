@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { Button } from "flowbite-react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function Services() {
+export default function Speciality() {
   useEffect(() => {
     Aos.init();
   });
   return (
-    <section className="bg-white  dark:bg-gray-900">
+    <section className="bg-white  dark:bg-gray-900 w-10/12 mx-auto"> 
       <div className="py-8 px-4 mx-auto flex flex-col max-w-screen-xl sm:py-16 lg:px-6">
         <div
           className="max-w-screen mb-8 lg:mb-16 flex flex-col"
@@ -281,13 +280,13 @@ export default function Services() {
             </p>
           </div>
         </div>
-      <Link
-      to="/services"
-        type="button"
-        class="text-white bg-blue-700 w-32 mt-2 mx-auto  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-      >
-        View All
-      </Link>
+        <Link
+          to="/services"
+          type="button"
+          class="text-white bg-blue-700  mt-2 mx-auto  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        >
+          View All
+        </Link>
       </div>
     </section>
   );

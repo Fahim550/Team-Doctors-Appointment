@@ -7,15 +7,16 @@ export default function Contact() {
     Aos.init();
   });
   return (
+    <section className='bg-gray-100 py-8 px-4'>
     <div className="flex flex-col w-10/12 mx-auto mb-3">
       <h2
-        className="text-4xl font-extrabold leadi lg:text-5xl text-blue-800 mx-auto"
+        className="text-4xl font-extrabold  lg:text-5xl text-blue-800 mx-auto"
         data-aos="zoom-out"
       >
         Book Your Visit!
         <hr class="w-20 h-1 mx-auto bg-blue-700 mb-2 border-0 rounded mt-4 dark:bg-blue-700"></hr>
       </h2>
-      <div className="sm:flex 800:flex-wrap gap-12 w-full  sm:justify-around  ">
+      <div className="sm:flex 800:flex-wrap gap-12 w-full mx-auto sm:justify-around  ">
         <img
           src={contact}
           alt=""
@@ -78,5 +79,6 @@ export default function Contact() {
         </form>
       </div>
     </div>
+    </section>
   );
 }

@@ -72,6 +72,7 @@ async function run() {
     const doctorsCollection = await db.collection("doctors"); // Give your table / collection name
     const usersCollection = await db.collection("users");
     const appoinmentsCollection = await db.collection("appoinments");
+    const blogCollection = await db.collection("blog");
     // const catagoryCollection=await db.collection("Orthopedics")
     // const productCollection = await db.collection("yourProductCollectionName") // Give your table / collection name
     // ... so on if there is more collection
@@ -170,6 +171,10 @@ async function run() {
     app.get("/appoinments", async (req, res) => {
       const appoinments = await appoinmentsCollection.find().toArray();
       res.json({ appoinments: appoinments, status: "ok", code: 200 });
+    });
+    app.get("/blog", async (req, res) => {
+      const Blog = await blogCollection.find().toArray();
+      res.json({ blog: Blog, status: "ok", code: 200 });
     });
 
     // app.post("/appoinments", jsonParser, async (req, res) => {

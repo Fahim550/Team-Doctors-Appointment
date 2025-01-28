@@ -7,8 +7,8 @@ export default function Contact() {
     Aos.init();
   });
   return (
-    <section className='bg-gray-100 py-8 px-4'>
-    <div className="flex flex-col w-10/12 mx-auto mb-3">
+    
+    <div className="flex flex-col w-10/12 mx-auto mb-3 py-8 px-4">
       <h2
         className="text-4xl font-extrabold  lg:text-5xl text-blue-800 mx-auto"
         data-aos="zoom-out"
@@ -79,6 +79,6 @@ export default function Contact() {
         </form>
       </div>
     </div>
-    </section>
+ 
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Blog from "../client/blog/Blog";
+import Blog from "./component/blog/Blog";
 import Layout from "../client/layout/Layout";
 import Contact from "./component/contact/Contact";
 import HeroSection from "./component/hero-section/HeroSection";

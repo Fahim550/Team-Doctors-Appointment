@@ -16,13 +16,13 @@ export default function Services() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           width="512"
           height="512"
           x="0"
           y="0"
           viewBox="0 0 512 512"
-          xml:space="preserve"
+          xmlSpace="preserve"
           className="w-2/12"
         >
           <g>
@@ -47,14 +47,14 @@ export default function Services() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           width="512"
           height="512"
           x="0"
           y="0"
           viewBox="0 0 289.207 289.207"
           // style="enable-background:new 0 0 512 512"
-          xml:space="preserve"
+          xmlSpace="preserve"
           className="w-2/12"
         >
           <g>
@@ -84,14 +84,14 @@ export default function Services() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           width="512"
           height="512"
           x="0"
           y="0"
           viewBox="0 0 57 56"
           // style="enable-background:new 0 0 512 512"
-          xml:space="preserve"
+          xmlSpace="preserve"
           className="w-2/12"
         >
           <g>
@@ -133,14 +133,14 @@ export default function Services() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           width="512"
           height="512"
           x="0"
           y="0"
           viewBox="0 0 512 512"
           // style="enable-background:new 0 0 512 512"
-          xml:space="preserve"
+          xmlSpace="preserve"
           className="w-2/12"
         >
           <g>
@@ -174,13 +174,13 @@ export default function Services() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           width="512"
           height="512"
           x="0"
           y="0"
           viewBox="0 0 128 128"
-          xml:space="preserve"
+          xmlSpace="preserve"
           className="w-2/12"
         >
           <g>
@@ -202,14 +202,14 @@ export default function Services() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           width="512"
           height="512"
           x="0"
           y="0"
           viewBox="0 0 480 480"
           // style="enable-background:new 0 0 512 512"
-          xml:space="preserve"
+          xmlSpace="preserve"
           className="w-2/12"
         >
           <g>
@@ -231,13 +231,13 @@ export default function Services() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           width="512"
           height="512"
           x="0"
           y="0"
           viewBox="0 0 512 512"
-          xml:space="preserve"
+          xmlSpace="preserve"
           className="w-2/12"
         >
           <g>
@@ -260,13 +260,13 @@ export default function Services() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           width="512"
           height="512"
           x="0"
           y="0"
           viewBox="0 0 512 512"
-          xml:space="preserve"
+          xmlSpace="preserve"
           class="w-2/12"
         >
           <g>
@@ -290,13 +290,13 @@ export default function Services() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           width="512"
           height="512"
           x="0"
           y="0"
           viewBox="0 0 512 512"
-          xml:space="preserve"
+          xmlSpace="preserve"
           className="w-2/12"
         >
           <g>
@@ -317,13 +317,13 @@ export default function Services() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           width="512"
           height="512"
           x="0"
           y="0"
           viewBox="0 0 480.024 457.829"
-          xml:space="preserve"
+          xmlSpace="preserve"
           className="w-2/12"
         >
           <g>

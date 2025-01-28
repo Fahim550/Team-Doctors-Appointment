@@ -1,7 +1,6 @@
 import { createContext, useState } from "react";
-import "./App.css";
-import Home from "./components/home/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
 import { router } from "./components/routes/router";
 export const StateContext = createContext({});
 
@@ -14,14 +13,16 @@ function App() {
     setService,
     catagory,
     setCatagory,
+    blog,
+    setBlog,
     appoinment,
     setAppoinment,
     adminAppoinment,
     setAdminAppoinment,
     bookingStatus,
     setBookingStatus,
-    doctors, 
-    setDoctors
+    doctors,
+    setDoctors,
   ] = useState({});
   return (
     <StateContext.Provider
@@ -32,12 +33,14 @@ function App() {
         setService,
         catagory,
         setCatagory,
+        blog,
+        setBlog,
         appoinment,
         setAppoinment,
         adminAppoinment,
         setAdminAppoinment,
         bookingStatus,
-        setBookingStatus
+        setBookingStatus,
       ]}
     >
       <RouterProvider router={routers} />

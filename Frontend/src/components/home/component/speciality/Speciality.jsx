@@ -1,6 +1,6 @@
 import Aos from "aos";
 import "aos/dist/aos.css";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Speciality() {
@@ -8,15 +8,15 @@ export default function Speciality() {
     Aos.init();
   });
   return (
-    <section className="bg-white  dark:bg-gray-900 w-10/12 mx-auto"> 
+    <section className="bg-white  dark:bg-gray-900 w-10/12 mx-auto">
       <div className="py-8 px-4 mx-auto flex flex-col max-w-screen-xl sm:py-16 lg:px-6">
         <div
           className="max-w-screen mb-8 lg:mb-16 flex flex-col"
           data-aos="zoom-in"
         >
           <h2 className="mb-4 mx-auto text-4xl tracking-tight font-extrabold text-blue-800 dark:text-white ">
-            Speciality
-            <hr class="w-20 h-1 mx-auto bg-blue-700 border-0 rounded mt-4 dark:bg-blue-700"></hr>
+            Find By Speciality
+            <hr className="w-24 h-1 mx-auto bg-blue-700 border-0 rounded mt-4 dark:bg-blue-700"></hr>
           </h2>
           <p className="text-blue-500 font-bold text-2xl dark:text-gray-400 mx-auto">
             Comprehensive Health Care Solutions For Your Well-bring
@@ -32,14 +32,14 @@ export default function Speciality() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="512"
                 height="512"
                 x="0"
                 y="0"
                 viewBox="0 0 512 512"
-                xml:space="preserve"
-                class=""
+                xmlSpace="preserve"
+                className=""
               >
                 <g>
                   <path
@@ -49,7 +49,7 @@ export default function Speciality() {
                     fill="#093f87"
                     opacity="1"
                     data-original="#000000"
-                    class=""
+                    className=""
                   ></path>
                 </g>
               </svg>
@@ -71,15 +71,15 @@ export default function Speciality() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="512"
                 height="512"
                 x="0"
                 y="0"
                 viewBox="0 0 289.207 289.207"
                 // style="enable-background:new 0 0 512 512"
-                xml:space="preserve"
-                class="hovered-paths"
+                xmlSpace="preserve"
+                className="hovered-paths"
               >
                 <g>
                   <path
@@ -94,7 +94,7 @@ export default function Speciality() {
                     fill="#093f87"
                     opacity="1"
                     data-original="#000000"
-                    class="hovered-path"
+                    className="hovered-path"
                   ></path>
                 </g>
               </svg>
@@ -116,14 +116,14 @@ export default function Speciality() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="512"
                 height="512"
                 x="0"
                 y="0"
                 viewBox="0 0 57 56"
                 // style="enable-background:new 0 0 512 512"
-                xml:space="preserve"
+                xmlSpace="preserve"
               >
                 <g>
                   <g fill="#000" fill-rule="nonzero">
@@ -171,14 +171,14 @@ export default function Speciality() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="512"
                 height="512"
                 x="0"
                 y="0"
                 viewBox="0 0 512 512"
                 // style="enable-background:new 0 0 512 512"
-                xml:space="preserve"
+                xmlSpace="preserve"
               >
                 <g>
                   <path
@@ -217,15 +217,15 @@ export default function Speciality() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="512"
                 height="512"
                 x="0"
                 y="0"
                 viewBox="0 0 480 480"
                 // style="enable-background:new 0 0 512 512"
-                xml:space="preserve"
-                class=""
+                xmlSpace="preserve"
+                className=""
               >
                 <g>
                   <path
@@ -233,7 +233,7 @@ export default function Speciality() {
                     fill="#093f87"
                     opacity="1"
                     data-original="#000000"
-                    class=""
+                    className=""
                   ></path>
                 </g>
               </svg>
@@ -253,13 +253,13 @@ export default function Speciality() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="512"
                 height="512"
                 x="0"
                 y="0"
                 viewBox="0 0 128 128"
-                xml:space="preserve"
+                xmlSpace="preserve"
               >
                 <g>
                   <path
@@ -283,7 +283,10 @@ export default function Speciality() {
         <Link
           to="/services"
           type="button"
-          class="text-white bg-blue-700  mt-2 mx-auto  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          onClick={() => {
+            scrollTo(0, 0);
+          }}
+          className="text-white bg-blue-700  mt-2 mx-auto  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >
           View All
         </Link>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { StateContext } from "../../../../App";
 export default function DoctorsTeam() {
   useEffect(() => {
@@ -15,6 +15,7 @@ export default function DoctorsTeam() {
   });
   const [doctors, setDoctors] = useState([]);
   const [stateData, setStateData] = useContext(StateContext);
+  const navigate = useNavigate();
   useEffect(() => {
     getDoctors();
   }, [stateData]);
@@ -118,8 +119,8 @@ export default function DoctorsTeam() {
             className="mb-4 text-4xl tracking-tight font-extrabold text-blue-800 dark:text-white"
             data-aos="zoom-out"
           >
-            Meet Our Exceptional Doctors
-            <hr class="w-28 h-1 mx-auto bg-blue-700 border-0 rounded mt-4 dark:bg-blue-700"></hr>
+            Meet Our Top Doctors
+            <hr className="w-28 h-1 mx-auto bg-blue-700 border-0 rounded mt-4 dark:bg-blue-700"></hr>
           </h2>
           {/* <p className="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
             Explore the whole collection of open-source web components and
@@ -167,35 +168,33 @@ export default function DoctorsTeam() {
             {doctors.map((doctor, i) => (
               <SwiperSlide
                 key={i}
-                className=" p-6 rounded-md shadow-md bg-white dark:bg-gray-900 dark:text-gray-50"
+                onClick={() => {
+                  navigate("/doctor/"+ doctor.name);handleDoctor(doctor);
+                  scrollTo(0, 0);
+                }}
+                
+                className="min-h-[380px] max-w-[274px] p-6 rounded-md shadow-md bg-white dark:bg-gray-900 dark:text-gray-50"
               >
-                <Link to="/doctors" className="min-h-[350px]">
-                  <img
-                    src={doctor?.image}
-                    alt=""
-                    className="w-full rounded-md object-cover  object-center
-      h-72 md:h-72 lg:h-80 xl:h-[350px] 
-      dark:bg-gray-500"
-                  />
-                  <div className="mt-6 mb-2">
-                    <span className="block text-xs font-medium uppercase tracking-wide dark:text-violet-400">
-                      {doctor?.name}
-                    </span>
-                    <h2 className="text-xl font-semibold">
-                      {doctor?.specilities}
-                    </h2>
-                  </div>
-                  <p className="dark:text-gray-100">
-                    {doctor?.name} et lorem at elit tristique dignissim et
-                    ullamcorper elit. In sed feugiat mi. Etiam ut lacinia dui.
-                  </p>
-                </Link>
+                <img
+                  src={doctor?.image}
+                  alt=""
+                  className="w-full h-[280px] rounded-md object-cover object-top sm:object-center
+    sm:h-[320px] lg:h-[350px] dark:bg-gray-500"
+                />
+                <div className=" mb-2">
+                  <span className="block text-xs font-medium uppercase tracking-wide dark:text-violet-400">
+                    {doctor?.name}
+                  </span>
+                  <h2 className="text-xl font-semibold">
+                    {doctor?.specilities}
+                  </h2>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
         ) : (
-          <div class="min-h-[350px] mt-5 mx-auto relative w-12 rounded-full">
-            <div class=" w-12 aspect-square  rounded-full border-8 border-blue-300 border-r-orange-400 animate-l2"></div>
+          <div className="min-h-[350px] mt-5 mx-auto relative w-12 rounded-full">
+            <div className=" w-12 aspect-square  rounded-full border-8 border-blue-300 border-r-orange-400 animate-l2"></div>
           </div>
         )}
       </div>
